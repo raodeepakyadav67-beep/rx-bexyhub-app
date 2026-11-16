@@ -2,6 +2,7 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { VasoactiveCalculator } from '@/components/VasoactiveCalculator';
 import { VentilationCalculator } from '@/components/VentilationCalculator';
+import { BodyCompositionCalculator } from '@/components/BodyCompositionCalculator';
 import { Footer } from '@/components/Footer';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <VasoactiveCalculator />
         <VentilationCalculator />
+        <BodyCompositionCalculator />
       </main>
       <Footer />
     </div>
