@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  70% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0.3;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.3s ease-out; }
+
+@keyframes ekg {
+  0%, 100% { transform: scaleY(1); }
+  12% { transform: scaleY(1); }
+  14% { transform: scaleY(0.4); }
+  16% { transform: scaleY(2.4); }
+  18% { transform: scaleY(0.6); }
+  20% { transform: scaleY(1); }
+  70% { transform: scaleY(1); }
+  72% { transform: scaleY(1.6); }
+  74% { transform: scaleY(1); }
+}
+.ekg-line { animation: ekg 1.6s ease-in-out infinite; transform-origin: center; }
+
+.tabular-nums { font-variant-numeric: tabular-nums; }
